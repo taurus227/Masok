@@ -2,81 +2,71 @@
 
 public class Student {
 	
-	private int StudentID;
-	private String StudentName;
-	private double StudentMarks;
-	private String StudentGrade;
-	private int Task1;
-	private int Task2;
-	private int Task3;
-	private int Task4;
+	private int id;
+	private double markTask1;
+	private double markTask2;
+	private double markTask3;
+	private double markTask4;
 	
-	
-	
-	public void setStudentID(int studentID) {
-		StudentID = studentID;
-		return;
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public double getMarkTask1() {
+		return markTask1;
 	}
 	
-	public void getTask1(int Task1) {
-		Task1 = Task1;
-		return;
+	public void setMarkTask1(double markTask1) {
+		this.markTask1 = markTask1;
+	}
+
+	public double getMarkTask2() {
+		return markTask2;
 	}
 	
-	public void setStudentName(String Name) {
-		StudentName = Name;
-		return;
+	public void setMarkTask2(double markTask2) {
+		this.markTask2 = markTask2;
+	}
+
+	public double getMarkTask3() {
+		return markTask3;
 	}
 	
-	public void setStudentMarks(double Marks) {
-		StudentMarks = Marks;
-		setStudentGrade();
-		return;
+	public void setMarkTask3(double markTask3) {
+		this.markTask3 = markTask3;
+	}
+
+	public double getMarkTask4() {
+		return markTask4;
 	}
 	
-	public int getStudentID() {
-		return StudentID;
+	public void setMarkTask4(double markTask4) {
+		this.markTask4 = markTask4;
+	}
+
+	public double getTotalMark() {
+		return markTask1 + markTask2 + markTask3 + markTask4;
 	}
 	
-	public int getTask1() {
-		return Task1;
-	}
-	
-	public int getTask2() {
-		return Task2;
-	}
-	
-	public int getTask3() {
-		return Task3;
-	}
-	
-	public int getTask4() {
-		return Task4;
-	}
-	
-	public String getStudentName() {
-		return StudentName;
-	}
-	
-	public double getStudentMarks(){
-		return StudentMarks;
-	}
-	
-	public String getStudentGrade() {
-		return StudentGrade;
-	}
-	
-	private void setStudentGrade() {
-		if ((StudentMarks >=80) && (StudentMarks <= 100))
-					StudentGrade = "HD - Higher Distinction";
-		else if ((StudentMarks >= 70) && (StudentMarks <= 79))
-					StudentGrade = "D - Distinction";
-		else if ((StudentMarks >= 60) && (StudentMarks <= 69))	
-					StudentGrade = "C - Credit";
-		else if ((StudentMarks >= 50) && (StudentMarks <= 59))	
-					StudentGrade = "P - Pass";
-		else if ((StudentMarks >= 0) && (StudentMarks <= 49))	
-					StudentGrade = "F - Fail";		
+	public String getGrade() {
+		double totalMark = getTotalMark();
+		if (totalMark >= 80) {
+			return "HD - Higher Distinction";
+		}
+		if (totalMark >= 70) {
+			return "D - Distinction";
+		}
+		if (totalMark >= 60) {
+			return "C - Credit";
+		}
+		if (totalMark >= 50) {
+			return "P - Pass";
+		}
+		return "F - Fail";		
 	}		
-	
+
 }
